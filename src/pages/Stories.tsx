@@ -37,6 +37,13 @@ interface FeaturedStory {
   author: string;
 }
 
+// Helper function to get the correct image path for both localhost and GitHub Pages
+const getImagePath = (filename: string) => {
+  // Check if we're on GitHub Pages
+  const isGitHubPages = window.location.hostname === 'khallinan12345.github.io';
+  return isGitHubPages ? `/impact-mining/${filename}` : `./${filename}`;
+};
+
 const featuredStories: FeaturedStory[] = [
   {
     id: 'ozuzu-nigeria',
@@ -45,17 +52,17 @@ const featuredStories: FeaturedStory[] = [
     content: `Before 2021, the community of Ozuzu relied on expensive, polluting diesel generators. That changed with the launch of a 67.2 kW solar microgrid, bringing consistent, clean energy to the entire community. Today, power is delivered at $0.40/kWh, much less than the $3.00/kWh generator rates, but far from economical for many in the community. Impact Mining reduces the rate by 20% community-wide, providing significant economic relief to the 150 homes and businesses and the local school connected to the microgrid.`,
     images: [
       {
-        src: './Kalobeyei_kids_and_solar.png',
+        src: getImagePath('Kalobeyei_kids_and_solar.png'),
         alt: 'Village kids and elders with solar installation',
         caption: 'Village kids with elders in front of one of the solar installations that they are so very proud of.'
       },
       {
-        src: './Kalobeyei_barber.png',
+        src: getImagePath('Kalobeyei_barber.png'),
         alt: 'Barber using electric trimmer',
         caption: 'A barber cutting hair with an electric trimmer. An example of how local people can leverage electricity with lower cost to invest in their businesses.'
       },
       {
-        src: './Kalobeyei_solar_charging_station.png',
+        src: getImagePath('Kalobeyei_solar_charging_station.png'),
         alt: 'Solar charging station',
         caption: 'A new solar charging station for people to charge their phones.'
       }
@@ -63,13 +70,13 @@ const featuredStories: FeaturedStory[] = [
     partners: [
       {
         name: 'Compass Mining',
-        logo: './compass_mining.png',
+        logo: getImagePath('compass_mining.png'),
         role: 'Anchor Donor',
         description: 'World\'s premier bitcoin mining marketplace'
       },
       {
         name: 'Renewvia Energy Africa',
-        logo: './renewvia.png',
+        logo: getImagePath('renewvia.png'),
         role: 'Development Partner',
         description: 'Global solar energy developer'
       }
@@ -88,17 +95,17 @@ Plus Synota's AI facilitated learning platform ("AI-ing and Vibing (in Sub-Sahar
 AI education will be used to enhance assets in the community (agriculture, business), to create new businesses, and to develop workforce readiness for tech jobs.`,
     images: [
       {
-        src: './Image_School_Outside_View.jpg',
+        src: getImagePath('Image_School_Outside_View.jpg'),
         alt: 'AI computer lab exterior',
         caption: 'An outside view of the new community AI computer lab. This initiative reflects the strong partnership established between Synota and Renewvia.'
       },
       {
-        src: './Image_1_Remodeled_classroom_with_computers.jpg',
+        src: getImagePath('Image_1_Remodeled_classroom_with_computers.jpg'),
         alt: 'Computer stations interior',
         caption: 'A view of the computer stations accessible to young people (and older people) in the community. "Excited" is an understatement when describing the community\'s response to the lab.'
       },
       {
-        src: './Image_remodeled_classroom_with_community_printer.jpg',
+        src: getImagePath('Image_remodeled_classroom_with_community_printer.jpg'),
         alt: 'Community printer station',
         caption: 'This shows the community printer, the first for the village.'
       }
@@ -106,13 +113,13 @@ AI education will be used to enhance assets in the community (agriculture, busin
     partners: [
       {
         name: 'Synota',
-        logo: './synota_image.png',
+        logo: getImagePath('synota_image.png'),
         role: 'Anchor Donor',
         description: 'Financial Energy Transaction Agent'
       },
       {
         name: 'Renewvia Energy Africa',
-        logo: './renewvia.png',
+        logo: getImagePath('renewvia.png'),
         role: 'Development Partner',
         description: 'Global solar energy developer'
       }
@@ -127,17 +134,17 @@ AI education will be used to enhance assets in the community (agriculture, busin
     content: `In the heart of the Niger Delta, Oloibiri Hospital provides critical healthcare services to over 3,600 patients annually and has safely delivered more than 34,000 babies since 2010. Yet for many in the community, access to healthcare remains out of reach. Despite being a private facility offering vital care, fees can range from ₦5,000 to ₦20,000 ($3 to $13) just for a consultation. Extended hospital stays may cost thousands of Naira, an impossible burden for residents earning an average annual income of $775 USD. Impact Mining covers Oloibiri Hospital's entire electricity bill. This not only reduces operational costs but directly increases access to care, enabling hundreds more patients to receive treatment each year.`,
     images: [
       {
-        src: './oloibiri_hospital_with_sign.jpg',
+        src: getImagePath('oloibiri_hospital_with_sign.jpg'),
         alt: 'Oloibiri Hospital exterior with sign',
         caption: 'An exterior view of the hospital'
       },
       {
-        src: './oloibiri_hospital_outside_image.jpg',
+        src: getImagePath('oloibiri_hospital_outside_image.jpg'),
         alt: 'Hospital compound exterior view',
         caption: 'An exterior view within the hospital compound'
       },
       {
-        src: './oloibiri_hospital_patients.jpg',
+        src: getImagePath('oloibiri_hospital_patients.jpg'),
         alt: 'Hospital exterior view',
         caption: 'An exterior view of the hospital'
       }
@@ -145,13 +152,13 @@ AI education will be used to enhance assets in the community (agriculture, busin
     partners: [
       {
         name: 'Compass Mining',
-        logo: './compass_mining.png',
+        logo: getImagePath('compass_mining.png'),
         role: 'Anchor Donor',
         description: 'World\'s premier bitcoin mining marketplace'
       },
       {
         name: 'Renewvia Energy Africa',
-        logo: './renewvia.png',
+        logo: getImagePath('renewvia.png'),
         role: 'Development Partner',
         description: 'Global solar energy developer'
       }
